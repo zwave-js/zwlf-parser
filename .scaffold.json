@@ -6,7 +6,7 @@
 	"packageManager": "yarn",
 	"monorepo": false,
 	"nodeVersion": 14,
-	"tools": ["ESLint", "Prettier", "Commitlint"],
+	"tools": ["ESLint", "Prettier"],
 	"testing": "jest",
 	"releaseScript": true,
 	"indentation": "Tab",
