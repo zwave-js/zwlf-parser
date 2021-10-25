@@ -58,7 +58,7 @@
     "build": "tsc -p tsconfig.build.json",
     "watch": "tsc -p tsconfig.build.json --watch",
     "test:reset": "jest --clear-cache",
-    "test:ts": "jest",
+    "test:ts": "jest --passWithNoTests",
     "test:ci": "yarn test:ts --runInBand",
     "test": "yarn test:ts --watch",
     "coverage:ci": "yarn test:ci --collect-coverage",
