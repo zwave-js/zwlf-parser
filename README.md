@@ -2,6 +2,28 @@
 
 Parses .zwlf files created by PC Controller and converts them into serial data
 
+## Usage
+
+### Parse a .zwlf file and print the serial data to console
+
+```
+npx @zwave-js/zwlf-parser [--json] /path/to/file.zwlf
+```
+
+outputs
+
+```
+2021-05-25T16:14:37.177Z « 0104011301e8
+2021-05-25T16:14:37.177Z » 06
+```
+
+You can optionally specify the `--json` flag to print the parsed data in JSON format. Each printed line will contain a JSON object:
+
+```
+{"ts":"2021-05-25T16:14:37.177Z","dir":"incoming","payload":"0104011301e8"}
+{"ts":"2021-05-25T16:14:37.177Z","dir":"outgoing","payload":"06"}
+```
+
 ## Changelog
 
 <!--
