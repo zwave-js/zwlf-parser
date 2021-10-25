@@ -1,6 +1,6 @@
 {
   "name": "@zwave-js/zwlf-parser",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Parses .zwlf files created by PC Controller and converts them into serial data",
   "keywords": [
     "Z-Wave",
