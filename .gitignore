@@ -1,0 +1,27 @@
+# No dot-directories except github/vscode
+.*/
+!.vscode/
+!.github/
+
+*.code-workspace
+node_modules
+nbproject
+
+# Unneeded package files
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+package-lock.json
+*.tgz
+
+# Compiled source files
+**/build
+**/*.tsbuildinfo
+*.map
+
+# Windows stuff
+Thumbs.db

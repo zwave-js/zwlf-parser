@@ -1,0 +1,99 @@
+{
+  "name": "@zwave-js/zwlf-parser",
+  "version": "0.0.1",
+  "description": "Parses .zwlf files created by PC Controller and converts them into serial data",
+  "keywords": [
+    "Z-Wave",
+    "PC Controller",
+    "zwlf"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Al Calzone",
+    "email": "d.griesel@gmx.net"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "build/index.js",
+  "exports": {
+    ".": "./build/index.js",
+    "./package.json": "./package.json",
+    "./*.map": "./build/*.js.map",
+    "./*": "./build/*.js"
+  },
+  "types": "build/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "build/index.d.ts": [
+        "build/index.d.ts"
+      ],
+      "*": [
+        "build/*"
+      ]
+    }
+  },
+  "files": [
+    "build/",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@alcalzone/release-script": "^2.2.1",
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-typescript": "^7.15.0",
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@tsconfig/node14": "^1.0.1",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^14.17.29",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "commitizen": "^4.2.4",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "jest-extended": "^1.1.0",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "source-map-support": "^0.5.20",
+    "ts-node": "^10.4.0",
+    "typescript": "~4.4.4"
+  },
+  "scripts": {
+    "prebuild": "rimraf ./build",
+    "build": "tsc -p tsconfig.build.json",
+    "watch": "tsc -p tsconfig.build.json --watch",
+    "test:reset": "jest --clear-cache",
+    "test:ts": "jest",
+    "test:ci": "yarn test:ts --runInBand",
+    "test": "yarn test:ts --watch",
+    "coverage:ci": "yarn test:ci --collect-coverage",
+    "coverage": "yarn test:ts --collect-coverage",
+    "lint": "eslint --ext .ts src/",
+    "release": "release-script",
+    "commit": "git-cz",
+    "postinstall": "husky install"
+  },
+  "homepage": "https://github.com/zwave-js/zwlf-parser",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zwave-js/zwlf-parser"
+  },
+  "bugs": {
+    "url": "https://github.com/zwave-js/zwlf-parser/issues"
+  },
+  "readmeFilename": "README.md",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

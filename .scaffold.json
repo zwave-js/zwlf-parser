@@ -1,0 +1,22 @@
+{
+	"cli": true,
+	"projectName": "zwlf-parser",
+	"description": "Parses .zwlf files created by PC Controller and converts them into serial data",
+	"keywords": ["Z-Wave", "PC Controller", "zwlf"],
+	"packageManager": "yarn",
+	"monorepo": false,
+	"nodeVersion": 14,
+	"tools": ["ESLint", "Prettier", "Commitlint"],
+	"testing": "jest",
+	"releaseScript": true,
+	"indentation": "Tab",
+	"quotes": "double",
+	"authorName": "zwave-js",
+	"authorGithub": "zwave-js",
+	"authorEmail": "d.griesel@gmx.net",
+	"gitRemoteProtocol": "HTTPS",
+	"gitCommit": false,
+	"license": "MIT License",
+	"dependabot": false,
+	"creatorVersion": "1.0.0"
+}
