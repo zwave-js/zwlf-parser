@@ -24,10 +24,6 @@ You can optionally specify the `--json` flag to print the parsed data in JSON fo
 {"ts":"2021-05-25T16:14:37.177Z","dir":"outgoing","payload":"06"}
 ```
 
-## Contributing
-
-AI tools may assist contributions only when a human reviews, understands, and can explain every change. Autonomous contributions and unreviewed AI-generated communication are prohibited. See the [Z-Wave JS AI policy](AI_POLICY.md) for the complete requirements.
-
 ## Changelog
 
 <!--
