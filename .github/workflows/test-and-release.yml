@@ -21,14 +21,14 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [14.x]
+                node-version: [24.x]
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v7
 
             - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v7
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
@@ -49,15 +49,15 @@ jobs:
         runs-on: ${{ matrix.os }}
         strategy:
             matrix:
-                node-version: [14.x, 16.x]
+                node-version: [22.x, 24.x]
                 os: [ubuntu-latest, windows-latest, macos-latest]
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v7
 
             - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v7
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
@@ -84,14 +84,14 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                node-version: [14.x]
+                node-version: [24.x]
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v7
 
             - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v7
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
@@ -122,12 +122,10 @@ jobs:
                   npm publish
 
             - name: Create Github Release
-              uses: actions/create-release@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              uses: softprops/action-gh-release@v3
               with:
                   tag_name: ${{ github.ref }}
-                  release_name: Release v${{ steps.extract_release.outputs.VERSION }}
+                  name: Release v${{ steps.extract_release.outputs.VERSION }}
                   draft: false
                   # Prerelease versions create prereleases on Github
                   prerelease: ${{ contains(steps.extract_release.outputs.VERSION, '-') }}
